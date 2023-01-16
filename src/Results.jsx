@@ -1,15 +1,20 @@
-import { Card } from '@mui/material';
+import Grid2 from '@mui/material/Unstable_Grid2';
+import Connection from './components/Connection/Connection';
 
-export default function Results({ connections }) {
+export default function Results({ connections, weather }) {
   return (
-    <div>
+    <Grid2 container spacing={2}>
       {connections.map((connection) => {
         return (
-          <Card>
-            <p>{connection.duration}</p>
-          </Card>
+          <Grid2 xs={12} md={6}>
+            <Connection
+              key={connection.from.departureTimestamp}
+              connection={connection}
+              weather={weather}
+            />
+          </Grid2>
         );
       })}
-    </div>
+    </Grid2>
   );
 }
