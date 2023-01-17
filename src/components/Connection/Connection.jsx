@@ -1,4 +1,4 @@
-import { Card, Divider, Typography } from '@mui/material';
+import { Button, Card, Divider, Typography } from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2';
 import ConnectionModal from './ConnectionModal/ConnectionModal';
 import { useState } from 'react';
@@ -7,12 +7,9 @@ import { formatTimeStamp } from '../../services/helpers';
 export default function Connection({ connection, weather }) {
   const [modalOpen, setModalOpen] = useState(false);
 
-  console.log(weather);
-  //console.log(connection);
-
   return (
     <>
-      <Card onClick={() => setModalOpen(true)}>
+      <Card>
         <Grid2 container>
           <Grid2 xs={5}>
             <Typography variant={'h4'} align={'center'}>
@@ -45,6 +42,11 @@ export default function Connection({ connection, weather }) {
             <Typography align={'center'} variant={'body1'}>
               Transfers: {connection.transfers}
             </Typography>
+          </Grid2>
+          <Grid2 display={'flex'} justifyContent={'flex-end'} xs={12}>
+            <Button variant={'contained'} onClick={() => setModalOpen(true)}>
+              Details
+            </Button>
           </Grid2>
         </Grid2>
       </Card>

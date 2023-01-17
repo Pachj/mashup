@@ -4,8 +4,8 @@ import Grid2 from '@mui/material/Unstable_Grid2';
 
 export default function Form({ fetchData }) {
   // TODO: remove default values
-  const [fromDestination, setFromDestination] = useState('Bern');
-  const [toDestination, setToDestination] = useState('Luzern');
+  const [fromDestination, setFromDestination] = useState('');
+  const [toDestination, setToDestination] = useState('');
 
   return (
     <Grid2 container spacing={2}>

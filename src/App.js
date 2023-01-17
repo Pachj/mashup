@@ -4,11 +4,9 @@ import { useState } from 'react';
 import Results from './Results';
 import { weatherDump } from './weatherDump';
 import Grid2 from '@mui/material/Unstable_Grid2';
+import { weatherKey } from './key';
 
 function App() {
-  // TODO: link with maps link on station name
-
-  // TODO: remove empty array
   const [connections, setConnections] = useState([]);
   const [weather, setWeather] = useState(weatherDump);
 
@@ -18,13 +16,13 @@ function App() {
       .then((data) => {
         setConnections(data.connections);
         console.log(data);
-        // fetch(
-        //   `https://api.openweathermap.org/data/2.5/weather?lat=${data.from.coordinate.x}&lon=${data.from.coordinate.y}&units=metric&appid=${weatherKey}`
-        // )
-        //   .then((resW) => resW.json())
-        //   .then((dataW) => {
-        //     console.log(dataW);
-        //   });
+        fetch(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${data.to.coordinate.x}&lon=${data.to.coordinate.y}&units=metric&appid=${weatherKey}`
+        )
+          .then((resW) => resW.json())
+          .then((dataW) => {
+            console.log(dataW);
+          });
       });
   };
 
