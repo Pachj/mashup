@@ -3,6 +3,7 @@ import Form from './Form';
 import { useState } from 'react';
 import Results from './Results';
 import { weatherDump } from './weatherDump';
+import Grid2 from '@mui/material/Unstable_Grid2';
 
 function App() {
   // TODO: link with maps link on station name
@@ -29,8 +30,14 @@ function App() {
 
   return (
     <div className='App'>
-      <Form fetchData={fetchData} />
-      <Results connections={connections} weather={weather} />
+      <Grid2 container spacing={2}>
+        <Grid2 xs={12} display={'flex'} justifyContent={'center'}>
+          <Form fetchData={fetchData} />
+        </Grid2>
+        <Grid2 xs={12}>
+          <Results connections={connections} weather={weather} />
+        </Grid2>
+      </Grid2>
     </div>
   );
 }
