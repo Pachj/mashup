@@ -13,11 +13,12 @@ export default function WeatherInformation({ weather }) {
       <Grid2 xs={8}>
         <Grid2 xs={12}>
           <Typography variant={'body1'}>{weather.weather[0].description}</Typography>
-          <Typography variant={'body1'}>Temperature: {weather.main.temp}</Typography>
-          <Typography variant={'body1'}>Felt Temperature: {weather.main.feels_like}</Typography>
+          <Typography variant={'body1'}>Temperature: {weather.main.temp} C°</Typography>
+          <Typography variant={'body1'}>Felt Temperature: {weather.main.feels_like} C°</Typography>
+          <Typography variant={'body1'}>Wind: {weather.wind.speed} km/h</Typography>
         </Grid2>
       </Grid2>
-      <Grid2 xs={4}>
+      <Grid2 display={'flex'} alignItems={'center'} xs={4}>
         <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
       </Grid2>
     </Grid2>
