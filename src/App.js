@@ -19,7 +19,7 @@ function App() {
         setConnections(data.connections);
         console.log(data);
         // fetch(
-        //   `https://api.openweathermap.org/data/2.5/weather?lat=${data.from.coordinate.x}&lon=${data.from.coordinate.y}&appid=${weatherKey}`
+        //   `https://api.openweathermap.org/data/2.5/weather?lat=${data.from.coordinate.x}&lon=${data.from.coordinate.y}&units=metric&appid=${weatherKey}`
         // )
         //   .then((resW) => resW.json())
         //   .then((dataW) => {

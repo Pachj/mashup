@@ -1,0 +1,25 @@
+import React from 'react';
+import Grid2 from '@mui/material/Unstable_Grid2';
+import { Typography } from '@mui/material';
+
+export default function WeatherInformation({ weather }) {
+  return (
+    <Grid2 container spacing={2}>
+      <Grid2 xs={12}>
+        <Typography variant={'h5'} align={'center'}>
+          Weather at destination
+        </Typography>
+      </Grid2>
+      <Grid2 xs={8}>
+        <Grid2 xs={12}>
+          <Typography variant={'body1'}>{weather.weather[0].description}</Typography>
+          <Typography variant={'body1'}>Temperature: {weather.main.temp}</Typography>
+          <Typography variant={'body1'}>Felt Temperature: {weather.main.feels_like}</Typography>
+        </Grid2>
+      </Grid2>
+      <Grid2 xs={4}>
+        <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
+      </Grid2>
+    </Grid2>
+  );
+}
