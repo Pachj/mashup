@@ -6,7 +6,7 @@ export default function Results({ connections, weather }) {
     <Grid2 container spacing={2}>
       {connections.map((connection) => {
         return (
-          <Grid2 xs={12} md={6}>
+          <Grid2 xs={12} md={6} key={`grid-${connection.from.departureTimestamp}`}>
             <Connection
               key={connection.from.departureTimestamp}
               connection={connection}
